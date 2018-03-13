@@ -1,28 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/CL_view"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
     tools:context="com.codedisruptors.mycart.LoginActivity">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="76dp"
+        android:src="@drawable/cart"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread" />
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/textInputLayout"
         android:layout_width="300dp"
-        android:layout_height="59dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginStart="42dp"
         app:layout_constraintBottom_toTopOf="@+id/textInputLayout2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_chainStyle="packed"
         tools:ignore="MissingConstraints">
 
         <EditText
             android:id="@+id/et_user_id"
-            android:hint="@string/username"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:hint="@string/username" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -31,10 +52,11 @@
 
         android:layout_width="300dp"
         android:layout_height="55dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginStart="42dp"
         app:layout_constraintBottom_toTopOf="@+id/btn_Login"
-        app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
-        app:layout_constraintStart_toStartOf="@+id/textInputLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
         tools:ignore="MissingConstraints">
 
@@ -47,32 +69,27 @@
             tools:ignore="TextFields" />
     </android.support.design.widget.TextInputLayout>
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
-        app:layout_constraintStart_toStartOf="@+id/textInputLayout"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_launcher_round" />
 
     <Button
         android:id="@+id/btn_Login"
-        android:layout_width="174dp"
-        android:layout_height="40dp"
-        android:clickable="true"
-        android:gravity="center_horizontal"
+        android:layout_width="250dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/bgbutton"
+        android:gravity="center_vertical"
         android:text="LOGIN"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="@+id/textInputLayout2"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/textInputLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="283dp" />
+        />
 
     <TextView
-        android:textSize="11dp"
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -80,21 +97,38 @@
         android:layout_marginStart="8dp"
         android:gravity="center_horizontal"
         android:text="@string/no_account_yet"
+        android:textSize="11dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_create_account"
         app:layout_constraintEnd_toEndOf="@+id/btn_Login"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/btn_Login"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="457dp" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_Login"
+        tools:ignore="MissingConstraints" />
+
 
     <TextView
-        android:id="@+id/textView2"
+        android:textColor="@color/colorPrimary"
+        android:id="@+id/tv_create_account"
+        android:clickable="true"
+        android:focusable="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
         android:gravity="center_horizontal"
         android:text="@string/create_an_account_here"
         android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/textView"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="476dp" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:ignore="MissingConstraints"/>
 
-</android.support.constraint.ConstraintLayout>
+
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</FrameLayout>

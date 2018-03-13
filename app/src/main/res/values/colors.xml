@@ -4,4 +4,7 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorRow">#fcfcfc</color>
+    <color name="colorcbutton">#5fb352</color>
+    <color name="colorAppBar">#0fe6ea</color>
+    <color name="colorWhite">#ffffff</color>
 </resources>

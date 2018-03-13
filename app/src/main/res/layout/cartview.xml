@@ -1,21 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <ImageView
-        android:layout_marginTop="20dp"
-        android:layout_gravity="bottom"
-        android:src="@mipmap/ic_launcher"
-        android:layout_width="100dp"
-        android:layout_height="100dp" />
+    <FrameLayout
+        android:id="@+id/FL_cartview"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginEnd="20dp"
+        android:layout_gravity="end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="UselessParent">
 
-    <TextView
-        android:text="0"
-        android:layout_marginLeft="70dp"
-        android:layout_marginBottom="20dp"
-        android:gravity="center"
+    <ImageView
+        android:id="@+id/cart_act"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="bottom"
+        android:src="@drawable/cart"
         android:layout_width="40dp"
         android:layout_height="40dp" />
 
+    <TextView
+        android:visibility="gone"
+        android:textColor="@color/colorRow"
+        android:id="@+id/tv_cart_count"
+        android:textSize="9dp"
+        android:background="@drawable/bgcount"
+        android:text="0"
+        android:layout_marginLeft="25dp"
+        android:layout_marginBottom="7dp"
+        android:gravity="center"
+        android:layout_width="20dp"
+        android:layout_height="20dp" />
+    </FrameLayout>
 </FrameLayout>

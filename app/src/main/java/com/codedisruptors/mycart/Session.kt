@@ -27,6 +27,14 @@ class Session (context:Context) {
         editor.putBoolean(USER_STATUS,isUserActive).apply()
     }
 
+    fun setToken(token:String){
+        editor.putString(USER_TOKEN, token).apply()
+    }
+
+    fun getToken():String{
+        return mPreference.getString(USER_TOKEN,"userKey")
+    }
+
 
     fun isUserActive():Boolean{
 
@@ -38,5 +46,6 @@ class Session (context:Context) {
         val USER_PREFERENCE = "com.codedisruptors.mycart"
         val USER_STATUS     = "userStatus"
         var USER_PROFILE    = "userProfile"
+        var USER_TOKEN      = "userKey"
     }
 }
